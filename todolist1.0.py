@@ -7,15 +7,11 @@ catatan_per_tanggal = {}
 def tambah_tugas():
     input_nama, ok1 = QInputDialog.getText(window, "ToDoList", "Nama tugas")
     if ok1:
-        nama_tugas = input_nama 
+        nama_tugas = input_nama
 
-        input_dosen, ok2 = QInputDialog.getText(window, "ToDoList", "Nama dosen")
+        input_jam, ok2 = QInputDialog.getText(window, "ToDoList", "Jam deadline (HH:MM)")
         if ok2:
-            nama_dosen = input_dosen
-
-            input_jam, ok3 = QInputDialog.getText(window, "ToDoList", "Jam deadline (HH:MM)")
-            if ok3:
-             jam_deadline = input_jam
+            jam_deadline = input_jam
             if re.match(r'^\d{2}:\d{2}$', jam_deadline):
                 print("Valid input:", jam_deadline)
             else:
@@ -61,7 +57,7 @@ all_tasks_list = QListWidget()
 layout.addWidget(all_tasks_list)
 
 button_hapus_catatan = QPushButton("Hapus Tugas")
-button_hapus_catatan.setStyleSheet("background-color: #000000; color: white; border: 2px solid #000000; border-radius: 5px")
+button_hapus_catatan.setStyleSheet("background-color: #FF5733; color: white; border: 2px solid #FF5733; border-radius: 5px")
 layout.addWidget(button_hapus_catatan)
 
 window.setLayout(layout)
